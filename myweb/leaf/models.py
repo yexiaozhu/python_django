@@ -25,7 +25,9 @@ class Question(models.Model):
         # print type(timezone.now())
         # print datetime.timedelta(days=1)
         # print type(datetime.timedelta(days=1))
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        # return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 @python_2_unicode_compatible  # only if you need to support Python 2
 class Choice(models.Model):
