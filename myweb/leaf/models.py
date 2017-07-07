@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from time import timezone
 
 import datetime
 from django.db import models
@@ -9,6 +8,7 @@ from django.db import models
 # Create your models here.
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
+from django.utils import timezone
 
 
 @python_2_unicode_compatible  # only if you need to support Python 2
@@ -18,7 +18,13 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
-    def was_published_recetly(self):
+    def was_published_recently(self):
+        # print '1',self.pub_date
+        # print '2',timezone.now() - datetime.timedelta(days=1)
+        # print timezone.now()
+        # print type(timezone.now())
+        # print datetime.timedelta(days=1)
+        # print type(datetime.timedelta(days=1))
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 @python_2_unicode_compatible  # only if you need to support Python 2
