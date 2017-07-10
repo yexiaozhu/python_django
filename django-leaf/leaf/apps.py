@@ -5,4 +5,4 @@ from django.apps import AppConfig
 
 
 class LeafConfig(AppConfig):
-    name = 'leaf'
+    name = 'python_django.django-leaf.leaf'

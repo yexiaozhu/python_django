@@ -1,0 +1,6 @@
+include LICENSE
+include README.rst
+recursive-include leaf/static *
+recursive-include leaf/templates *
+recursive-include docs *
+
